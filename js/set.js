@@ -24,32 +24,32 @@ var se_list_preinstall = {
     },
     '4': {
         id: 4,
+        title: "DuckDuckGo",
+        url: "https://duckduckgo.com/",
+        name: "q",
+        icon: "iconfont icon-DuckDuckGo",
+    },
+    '5': {
+        id: 5,
         title: "Github",
         url: "https://github.com/search",
         name: "q",
         icon: "iconfont icon-github",
     },
-    '5': {
-        id: 5,
+    '7': {
+        id: 7,
+        title: "YouTube",
+        url: "https://www.youtube.com/results",
+        name: "search_query",
+        icon: "iconfont icon-YouTube",
+    },
+    '8': {
+        id: 8,
         title: "BiliBili",
         url: "https://search.bilibili.com/all",
         name: "keyword",
         icon: "iconfont icon-bilibilidonghua",
     },
-    '6': {
-        id: 6,
-        title: "淘宝",
-        url: "https://s.taobao.com/search",
-        name: "q",
-        icon: "iconfont icon-taobao",
-    },
-    '7': {
-        id: 7,
-        title: "京东",
-        url: "https://search.jd.com/Search",
-        name: "keyword",
-        icon: "iconfont icon-jingdong",
-    }
 };
 
 // 默认快捷方式
@@ -93,7 +93,7 @@ function setSeList(se_list) {
 // 获得默认搜索引擎
 function getSeDefault() {
     var se_default = Cookies.get('se_default');
-    return se_default ? se_default : "3";
+    return se_default ? se_default : "4";
 }
 
 //背景图片
