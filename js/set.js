@@ -23,7 +23,7 @@ var se_list_preinstall = {
         icon: "iconfont icon-google",
     },
     '4': {
-        id: 5,
+        id: 4,
         title: "Github",
         url: "https://github.com/search",
         name: "q",
