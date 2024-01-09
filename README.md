@@ -12,8 +12,9 @@ Snavigation的原作者是imsyy，项目地址为：https://github.com/imsyy/Sna
 
 2024.1.8 修改壁纸，去除二次元壁纸和美女壁纸
 
-2024.1.9 更改书签
+2024.1.9 更改书签，添加搜索引擎DuckDuckGo和YouTube，设置DuckDuckGo为默认搜索引擎
 
 Bug：
 
 1. 2024.1.9 打开书签时不能自动加载书签的内容，需要手动点击才可加载
+2. 2024.1.9 DuckDuckGo和YouTube缺少iconfont
