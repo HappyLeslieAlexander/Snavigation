@@ -24,48 +24,112 @@ var se_list_preinstall = {
     },
     '4': {
         id: 4,
-        title: "DuckDuckGo",
-        url: "https://duckduckgo.com/",
-        name: "q",
-        icon: "iconfont icon-DuckDuckGo",
+        title: "搜狗",
+        url: "https://www.sogou.com/web",
+        name: "query",
+        icon: "iconfont icon-sougousousuo",
     },
     '5': {
         id: 5,
+        title: "360",
+        url: "https://www.so.com/s",
+        name: "q",
+        icon: "iconfont icon-360sousuo",
+    },
+    '6': {
+        id: 6,
+        title: "微博",
+        url: "https://s.weibo.com/weibo",
+        name: "q",
+        icon: "iconfont icon-xinlangweibo",
+    },
+    '7': {
+        id: 7,
+        title: "知乎",
+        url: "https://www.zhihu.com/search",
+        name: "q",
+        icon: "iconfont icon-zhihu",
+    },
+    '8': {
+        id: 8,
         title: "Github",
         url: "https://github.com/search",
         name: "q",
         icon: "iconfont icon-github",
     },
-    '7': {
-        id: 7,
-        title: "YouTube",
-        url: "https://www.youtube.com/results",
-        name: "search_query",
-        icon: "iconfont icon-YouTube",
-    },
-    '8': {
-        id: 8,
+    '9': {
+        id: 9,
         title: "BiliBili",
         url: "https://search.bilibili.com/all",
         name: "keyword",
         icon: "iconfont icon-bilibilidonghua",
     },
+    '10': {
+        id: 10,
+        title: "淘宝",
+        url: "https://s.taobao.com/search",
+        name: "q",
+        icon: "iconfont icon-taobao",
+    },
+    '11': {
+        id: 11,
+        title: "京东",
+        url: "https://search.jd.com/Search",
+        name: "keyword",
+        icon: "iconfont icon-jingdong",
+    }
 };
 
 // 默认快捷方式
 var quick_list_preinstall = {
     '1': {
+        title: "Vercel",
+        url: "https://vercel.com/",
+    },
+    '2': {
         title: "GitHub",
         url: "https://github.com/",
     },
-    '2': {
+    '3': {
         title: "Cloudflare",
         url: "https://dash.cloudflare.com/",
     },
-    '3': {
+    '4': {
+        title: "W3school",
+        url: "https://www.w3school.com.cn/",
+    },
+    '5': {
+        title: "腾讯云",
+        url: "https://console.cloud.tencent.com/",
+    },
+    '6': {
+        title: "阿里云",
+        url: "https://console.aliyun.com/",
+    },
+    '7': {
+        title: "百度网盘",
+        url: "https://pan.baidu.com/",
+    },
+    '8': {
+        title: "阿里云盘",
+        url: "https://www.aliyundrive.com/drive/",
+    },
+    '9': {
         title: "Office",
         url: "https://www.office.com/",
     },
+    '10': {
+        title: "又拍云",
+        url: "https://console.upyun.com/",
+    },
+    '11': {
+        title: "CSDN",
+        url: "https://www.csdn.net/",
+    },
+    '12': {
+        title: "哔哩哔哩",
+        url: "https://www.bilibili.com/",
+    }
 };
 
 // 获取搜索引擎列表
@@ -93,7 +157,7 @@ function setSeList(se_list) {
 // 获得默认搜索引擎
 function getSeDefault() {
     var se_default = Cookies.get('se_default');
-    return se_default ? se_default : "4";
+    return se_default ? se_default : "1";
 }
 
 //背景图片
@@ -161,6 +225,12 @@ function setBgImgInit() {
             $('#bg').attr('src', 'https://api.aixiaowai.cn/gqapi/gqapi.php') //随机风景
             break;
         case "4":
+            $('#bg').attr('src', 'https://api.aixiaowai.cn/api/api.php') //随机二次元
+            break;
+        case "5":
+            $('#bg').attr('src', 'https://api.btstu.cn/sjbz/api.php?lx=meizi&format=images') //随机美女
+            break;
+        case "6":
             $('#bg').attr('src', bg_img["path"]) //自定义
             break;
     }

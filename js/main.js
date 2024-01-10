@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
     setTimeout(function () {
         iziToast.show({
             title: hello,
-            message: '欢迎来到 Leslie Alexander的HomePage'
+            message: '欢迎来到 浅草主页'
         });
     }, 800);
 
@@ -84,7 +84,7 @@ function time() {
     }
     $("#time_text").html(h + '<span id="point">:</span>' + m + '<span id="point">:</span>' + s); // 更新时间显示
     $("#day").html(mm + "&nbsp;月&nbsp;" + d + "&nbsp;日&nbsp;" + weekday[day]);
-    t = setTimeout(time, 1000);
+    t = setTimeout(time, 0);
 }
 
 
@@ -93,28 +93,28 @@ function time() {
 //每日限量 100 次
 //请前往 https://www.tianqiapi.com/index/doc?version=v6 申请（免费）
 fetch('https://restapi.amap.com/v3/ip?key=1764388c1da042251dc76d9c367c4378')
-  .then(response => response.json())
-  .then(data => {
-    const adcode = data.adcode;
-    const city = data.city;
-    return fetch(`https://restapi.amap.com/v3/weather/weatherInfo?city=${adcode}&key=1764388c1da042251dc76d9c367c4378`)
-      .then(response => response.json())
-      .then(data => {
-        const { weather, temperature, winddirection, windpower } = data.lives[0];
-        const temperature_float = parseFloat(temperature);
-        const weatherInfo = `${city} ${weather} ${temperature_float}℃ ${winddirection}风${windpower}级`;
-        $('#wea_text').text(city);
-        $('#tem1').text(temperature_float);
-        $('#tem2').text(temperature_float);
-        $('#weather_info').text(weatherInfo);
-      });
-  })
-  .catch(console.error);
+    .then(response => response.json())
+    .then(data => {
+        const adcode = data.adcode;
+        const city = data.city;
+        return fetch(`https://restapi.amap.com/v3/weather/weatherInfo?city=${adcode}&key=1764388c1da042251dc76d9c367c4378`)
+            .then(response => response.json())
+            .then(data => {
+                const { weather, temperature, winddirection, windpower } = data.lives[0];
+                const temperature_float = parseFloat(temperature);
+                const weatherInfo = `${city} ${weather} ${temperature_float}℃ ${winddirection}风${windpower}级`;
+                $('#wea_text').text(city);
+                $('#tem1').text(temperature_float);
+                $('#tem2').text(temperature_float);
+                $('#weather_info').text(weatherInfo);
+            });
+    })
+    .catch(console.error);
 ;
 
 
 
-    
+
 //Tab书签页
 $(function () {
     $(".mark .tab .tab-item").click(function () {
@@ -170,14 +170,20 @@ color: rgb(244,167,89);
 var styleContent = `
 color: rgb(30,152,255);
 `
-var title1 = 'HomePage'                                            
-var title2 = 'Leslie Alexander'
-
+var title1 = 'Snavigation'
+var title2 = `
+ _____ __  __  _______     ____     __
+|_   _|  \\/  |/ ____\\ \\   / /\\ \\   / /
+  | | | \\  / | (___  \\ \\_/ /  \\ \\_/ / 
+  | | | |\\/| |\\___ \\  \\   /    \\   /  
+ _| |_| |  | |____) |  | |      | |   
+|_____|_|  |_|_____/   |_|      |_|                                                     
+`
 var content = `
-版 本 号：1.0
-更新日期：2024-01-09
+版 本 号：1.1
+更新日期：2022-07-12
 
-https://homepage.leslieblog.top/
+Github:  https://github.com/Asakushen/Snavigation/tree/master
 `
 console.log(`%c${title1} %c${title2}
 %c${content}`, styleTitle1, styleTitle2, styleContent)
